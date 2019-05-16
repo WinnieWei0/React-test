@@ -12,7 +12,7 @@ import './game.css'
 // }
 const Squar=(props)=>{   //函数式写法
   return (
-    <button onClick={props.onClick}>  
+    <button onClick={props.onClick}>
       {props.value}
     </button>
   )
@@ -28,6 +28,9 @@ class Board extends Component{
   }
   handleClick(i){
     let squares=this.state.squares.slice()  //不可变性
+    if(squares[i]){
+      return
+    }
     squares[i]=this.state.isNext?'X':'O'
     this.setState({
       squares,
