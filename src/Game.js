@@ -26,9 +26,28 @@ class Board extends Component{
       isNext:true
     }
   }
+  winner(squares){
+    const lines=[
+      [0,1,2],
+      [3,4,5],
+      [6,7,8],
+      [0,3,6],
+      [1,4,7],
+      [2,5,8],
+      [0,4,8],
+      [2,4,6]
+    ]
+    for(let i=0;i<lines.length-1;i++){
+      const [a,b,c]=lines[i]
+      if(squares[a]&&squares[a]===squares[b]&&squares[b]===squares[c]){
+        return squares[a]
+      }
+    }
+    return null
+  }
   handleClick(i){
     let squares=this.state.squares.slice()  //不可变性
-    if(squares[i]){
+    if(this.winner(this.state.squares)||squares[i]){
       return
     }
     squares[i]=this.state.isNext?'X':'O'
@@ -38,6 +57,10 @@ class Board extends Component{
     })
   }
   render(){
+    const winner=this.winner(this.state.squares)
+    if(winner){
+      alert('winner:'+winner)
+    }
     return (
       <div className="board">
         <div className="items">
