@@ -6,6 +6,7 @@ import Tick from './Tick';
 import * as serviceWorker from './serviceWorker';
 import Focus from './Focus'
 import Toggle from './Toggle'
+import Game from './Game'
 
 // const tick=()=>{
 ReactDOM.render(
@@ -13,7 +14,9 @@ ReactDOM.render(
     <Tick/>
     <Focus/>
     {/* <App /> */}
-    <Toggle/>
+    <Toggle/><br/>
+    -----------------------------
+    <Game/>
   </div>,
   document.getElementById('root')
 );

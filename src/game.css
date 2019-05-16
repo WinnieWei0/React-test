@@ -1,0 +1,18 @@
+.board{
+  margin: 20px;
+}
+.items{
+  line-height: 28px;
+  clear: both;
+}
+button{
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  border: 1px solid #000;
+  float: left;
+}
